@@ -8,31 +8,13 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix, f1_score, accuracy_score, ConfusionMatrixDisplay
 from oneVsAll import LogisticRegression
-# from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression
 
 
-def limit_class_samples_exact(data, label_column, n=1000):
-    # Create an empty list to store the sampled data
-    sampled_data = []
-
-    # Iterate over each class in the label column
-    for label in data[label_column].unique():
-        # Select all samples from the current class
-        class_data = data[data[label_column] == label]
-        
-        # If there are more than 'n' samples, randomly sample 'n' of them
-        if len(class_data) > n:
-            class_data = class_data.sample(n=n, random_state=42)
-        
-        # Append the selected class samples to the sampled_data list
-        sampled_data.append(class_data)
-    
-    # Concatenate the sampled data into a single DataFrame
-    return pd.concat(sampled_data).reset_index(drop=True)
 
 data = pd.read_csv('D:\\MLAssignment1\\mlProject\\A_Z Handwritten Data.csv', header=None)
 print(data)
-data = limit_class_samples_exact(data , 0,1000)
+data = samples(data , 0,1000)
 print(data)
 pixels = data.iloc[:,1:]
 pixels = pixels / 255.0
@@ -87,7 +69,7 @@ label_encoder = LabelEncoder()
 y_test_encoded = label_encoder.fit_transform(y_test)
 y_train_encoded = label_encoder.fit_transform(y_train)
 y_val_encoded = label_encoder.transform(y_val)
-clf= LogisticRegression(learningRate=0.1 , n = 10000)
+clf= LogisticRegression(learningRate=0.1 , n = 2000)
 clf.calculateCost(dataDictionary , condition)
 pred = clf.predict(X_scaled_test)
 # clf.predictForEachClass(X_scaled_test, dataDictionary,condition)
