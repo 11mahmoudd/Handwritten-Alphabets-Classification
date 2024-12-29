@@ -1,7 +1,3 @@
-Here's a GitHub-style summary for your project:
-
----
-
 # 🖋️ Handwritten Alphabet Classification 🖋️  
 
 This project tackles the classification of A-Z handwritten alphabets using the [Handwritten Alphabets Dataset](https://www.kaggle.com/datasets/sachinpatel21/az-handwritten-alphabets-in-csv-format). The dataset consists of grayscale images of size 28x28 pixels. The goal is to build and compare machine learning models for accurate classification.
