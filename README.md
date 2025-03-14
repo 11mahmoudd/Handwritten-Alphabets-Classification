@@ -5,7 +5,7 @@ Here's a new version of your README file following the style you liked:
 # Handwritten Alphabets Classification
 
 📌 **Overview**  
-This project implements a machine learning pipeline to classify handwritten alphabets (A-Z) using a dataset of 28x28 pixel greyscale images. The project explores various machine learning models, including Support Vector Machines (SVM), Logistic Regression, and Neural Networks, to compare their performance on the task of image classification.
+This project implements a machine learning project to classify handwritten alphabets (A-Z) using a dataset of 28x28 pixel greyscale images. The project explores various machine learning models, including Support Vector Machines (SVM), Logistic Regression, and Neural Networks, to compare their performance on the task of image classification.
 
 📊 **Data Sources**  
 The dataset used for the project contains 28x28 pixel greyscale images of handwritten alphabets (A-Z). Each image is a 784-element vector representing one of the 26 classes (A-Z).
